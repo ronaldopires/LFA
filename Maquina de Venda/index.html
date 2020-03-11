@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Ronaldo Carvalho RGM - 1717476291">
+    <meta name="description" content="Máquina de Venda feito com JavaScript">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!--Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Monoton|Source+Sans+Pro&display=swap" rel="stylesheet">
+
+    <title>Máquina de Venda</title>
+</head>
+
+<body>
+    <div id="principal">
+        <div id="container">
+            <h2>Máquina de Venda</h2>
+            <p id="alert">Essa máquina não dá troco</p>
+            <hr>
+            <form action="">
+                <div id="painel">
+                    <input type="number" min="1" max="100" name="coin" readonly id="coin">
+                </div>
+                <div>
+
+                    <button class="btnCoin" type="button" value="1" id="Penny">$ 0,1</button>
+                    <button class="btnCoin" type="button" value="5" id="Nickel">$ 0,5</button>
+                    <button class="btnCoin" type="button" value="10" id="Dime">$ 0,10</button>
+                    <button class="btnCoin" type="button" value="25" id="Quarter">$ 0,25</button>
+                    <button class="btnCoin" type="button" value="50" id="HalfDollarCoin">$ 0,50</button>
+                </div>
+            </form>
+            <br>
+            <div id="bodyMachine">
+                <div id="out">
+                    <div id="janela1">
+                        <span>RETIRE AQUI</span>
+                    </div>
+                    <div id="janela2"><img width="100" height="150" src="img/coke.png" alt="coca"></div>
+                </div>
+                <footer>
+                    <span id="price">
+                    45 CENTS
+
+                    </span>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <div id="grid-container">
+        <div class="grid-item"><img width="35" src="img/feet.png"></div>
+        <div class="grid-item"><img width="35" src="img/feet.png"></div>
+    </div>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
