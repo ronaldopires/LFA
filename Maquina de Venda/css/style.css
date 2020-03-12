@@ -2,7 +2,6 @@ body {
     background-image: url("../img/room-2103284_1920.jpg");
     background-attachment: fixed;
     background-size: 100% 100%;
-    /* background-position-x: 50%; */
     background-repeat: no-repeat;
     font-family: 'Source Sans Pro', sans-serif;
 }
@@ -27,7 +26,6 @@ body {
 #coin {
     height: 60px;
     text-align: center;
-    font-family: ;
     color: #B6FF00;
     font-size: 22px;
     border: 2px solid #B6FF00;
@@ -62,7 +60,7 @@ body {
     position: relative;
 }
 
-#janela1 {
+#door1 {
     background-color: darkslategray;
     position: absolute;
     top: 0;
@@ -70,16 +68,22 @@ body {
     width: 150px;
     height: 150px;
     z-index: 1;
-    color: white;
+    color: #f5b942;
     line-height: 150PX;
 }
 
-#janela2 {
+#door2 {
     background-color: rgb(48, 48, 49);
     position: absolute;
     top: 0;
     width: 150px;
     height: 150px;
+    line-height: 150px;
+}
+
+#message {
+    color: #f5b942;
+    opacity: 0;
 }
 
 #bodyMachine,
