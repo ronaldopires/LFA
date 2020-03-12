@@ -1,63 +1,76 @@
 let total = 0;
 let valor = 0;
-let coinPenny = 0.01;
-let coinNickel = 0.05;
-let coinDime = 0.10;
-let coinQuarter = 0.25;
-let coinHalfDollarCoin = 0.50;
-let coin = Number($('#coin').val(0));
+let coin;
 
-//Ao clicar no elemento passo o valor de coin e chamo a função calcular
-$('#Penny').on('click', function() {
-    coin = coinPenny;
+$('#Penny').on('click', () => {
+    coin = 0.01;
     Calculate();
 });
-$('#Nickel').on('click', function() {
-    coin = coinNickel;
+$('#Nickel').on('click', () => {
+    coin = 0.05;
     Calculate();
 });
-$('#Dime').on('click', function() {
-    coin = coinDime;
+$('#Dime').on('click', () => {
+    coin = 0.10;
     Calculate();
 });
-$('#Quarter').on('click', function() {
-    coin = coinQuarter;
+$('#Quarter').on('click', () => {
+    coin = 0.25;
     Calculate();
 });
-$('#HalfDollarCoin').on('click', function() {
-    coin = coinHalfDollarCoin;
+$('#HalfDollarCoin').on('click', () => {
+    coin = 0.50;
     Calculate();
 });
-
+$('#DollarCoin').on('click', () => {
+    coin = 1.00;
+    Calculate();
+});
 
 function Calculate() {
-
-    //Caso seja diferente de 0.10 ou 0.25 é negado
     if ((coin != 0.10) && (coin != 0.25)) {
-        alert("Só aceitamos moedas de $0,10 e $0,25");
+        Modal();
     } else {
         valor += coin;
         total = valor.toFixed(2);
         if (total >= 0.45) {
             alert("Refrigerante Liberado");
-            console.log("Você gastou ", total);
+            console.log("Você gastou", total);
             valor = 0;
-            //Esconde a janela
-            $('#door1').slideUp('slow');
-            $('#lata').on('click', function() {
-                $('#lata').hide();
-                $('#message').css('opacity', 1);
-            });
-            //Após 3 segundos mostra door1
-            setTimeout(function() {
-                $('#door1').slideDown('fast');
-                $('#lata').slideDown('slow');
-                $('#message').css('opacity', 0);
-            }, 3000);
+            Esconde();
+            Mostra();
         } else {
             console.log("Dinheiro necessário 0,45. Você tem ", total)
         }
     }
-
     $("#coin").val(total);
 }
+
+function Modal() {
+    $('#myModal').fadeIn();
+    $('.close').on('click', () => {
+        $('#myModal').fadeOut();
+    })
+}
+
+function Esconde() {
+    $('#door1').slideUp('slow');
+    $('#lata').on('click', () => {
+        $('#lata').hide();
+        $('#message').css('opacity', 1);
+    })
+}
+
+function Mostra() {
+    setTimeout(() => {
+        $('#door1').slideDown('fast');
+        $('#lata').slideDown('slow');
+        $('#message').css('opacity', 0);
+    }, 3000);
+}
+
+setInterval(() => {
+    $('#identificacao').animate({
+        left: '10px'
+    });
+}, 2000);

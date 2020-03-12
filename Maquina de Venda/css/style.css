@@ -1,9 +1,71 @@
+@font-face {
+    font-family: "Source Sans Pro";
+    src: url("../fonts/SourceSansPro-Regular.ttf");
+}
+
 body {
-    background-image: url("../img/room-2103284_1920.jpg");
-    background-attachment: fixed;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
+    background-color: #13293D;
     font-family: 'Source Sans Pro', sans-serif;
+}
+
+
+/*Nome e RGM*/
+
+#identificacao {
+    font-size: 2em;
+    color: #fff;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 8px #10e31e;
+    position: absolute;
+    top: 0;
+    left: -500px;
+}
+
+
+/* The Modal (background) */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    padding-top: 200px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+
+/* Modal Content */
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+    border-radius: 10px;
+    color: #FF0000;
+}
+
+
+/* The Close Button */
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 #principal {
@@ -111,12 +173,12 @@ footer {
 #alert {
     height: 40px;
     margin: 0 auto;
-    animation: test 3s ease;
+    animation: AnimeAlert 3s ease;
     text-align: center;
     animation-iteration-count: infinite;
 }
 
-@keyframes test {
+@keyframes AnimeAlert {
     0% {
         opacity: 0;
     }
@@ -152,4 +214,52 @@ hr {
     border-radius: 50%;
     width: 150px;
     height: 150px;
+}
+
+
+/*Media Queries*/
+
+@media only screen and (max-width: 500px) {
+    #identificacao {
+        font-size: 1em;
+    }
+    #container {
+        width: 90%;
+    }
+    #principal {
+        padding-top: 10%;
+    }
+    #grid-container {
+        width: 35%;
+        grid-gap: 150px;
+    }
+    .modal-content {
+        width: 60%;
+    }
+}
+
+@media only screen and (min-width: 501px) and (max-width: 768px) {
+    #identificacao {
+        font-size: 1em;
+    }
+    #container {
+        width: 45%;
+    }
+    #grid-container {
+        width: 35%;
+        grid-gap: 150px;
+    }
+}
+
+@media only screen and (min-width: 769px) and ( max-width: 1024px) {
+    #identificacao {
+        font-size: 1.5em;
+    }
+    #container {
+        width: 35%;
+    }
+    #grid-container {
+        width: 30%;
+        grid-gap: 150px;
+    }
 }

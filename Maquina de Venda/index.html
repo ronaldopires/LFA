@@ -4,17 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Ronaldo Carvalho RGM - 1717476291">
+    <meta name="author" content="Ronaldo Carvalho RGM - 17476291">
     <meta name="description" content="Máquina de Venda feito com JavaScript">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
-    <!--Fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
 
     <title>Máquina de Venda</title>
 </head>
 
 <body>
+    <div id="identificacao">
+        <span>Ronaldo Pires de Carvalho</span><br>
+        <span>17476291</span>
+    </div>
     <div id="principal">
         <div id="container">
             <h2>Máquina de Venda</h2>
@@ -22,7 +24,7 @@
             <hr>
             <form action="">
                 <div id="painel">
-                    <input type="number" min="1" max="100" name="coin" readonly id="coin">
+                    <input type="number" min="1" max="100" value="0" name="coin" id="coin" readonly>
                 </div>
                 <div>
 
@@ -31,8 +33,17 @@
                     <button class="btnCoin" type="button" id="Dime">$ 0,10</button>
                     <button class="btnCoin" type="button" id="Quarter">$ 0,25</button>
                     <button class="btnCoin" type="button" id="HalfDollarCoin">$ 0,50</button>
+                    <button class="btnCoin" type="button" id="DollarCoin">$<br> 1</button>
                 </div>
             </form>
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>Só aceitamos moedas de $0,10 e $0,25</p>
+                </div>
+            </div>
             <br>
             <div id="bodyMachine">
                 <div id="out">
